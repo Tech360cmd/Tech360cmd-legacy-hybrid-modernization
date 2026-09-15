@@ -1,0 +1,37 @@
+# GitHub Actions Continuous Integration Workflow Matrix
+# Automatically validates headless regression tests on the legacy modernization sandbox.
+
+name: Legacy Hybrid App Logic CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+permissions:
+  contents: read
+
+jobs:
+  validate-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the source repository code into the CI context environment
+    - name: Checkout Source Code Repository
+      uses: actions/checkout@v4
+
+    # Step 2: Establish the precise Node.js runtime engine constraints
+    - name: Set up Node.js Engine Runtime
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18.x'
+        cache: 'npm'
+
+    # Step 3: Clean install project dependencies bypassing lock file variances 
+    - name: Install Project Lifecycle Dependencies (NPM)
+      run: npm ci
+
+    # Step 4: Execute headless JSDOM unit test regression suites
+    - name: Execute Headless App Unit Test Matrix
+      run: npm test
