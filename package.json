@@ -4,13 +4,16 @@
   "description": "Enterprise legacy hybrid app architecture (PHP/AngularJS/jQuery) with integrated unit testing and security hardening mitigations.",
   "main": "index.php",
   "scripts": {
-    "test": "mocha test/unit/**/*.spec.js --reporter spec"
+    "test": "npm run test:mocha && npm run test:jasmine",
+    "test:mocha": "mocha test/unit/**/*.spec.js --reporter spec",
+    "test:jasmine": "jasmine JASMINE_CONFIG_PATH=spec/support/jasmine.json"
   },
   "dependencies": {
     "angular": "1.8.3",
     "jquery": "3.7.1"
   },
   "devDependencies": {
+    "jasmine": "5.1.0",
     "jsdom": "22.1.0",
     "mocha": "10.2.0",
     "chai": "4.3.7"
