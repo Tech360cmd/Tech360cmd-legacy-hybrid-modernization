@@ -1,0 +1,22 @@
+{
+  "name": "tech360cmd-legacy-hybrid-modernization",
+  "version": "1.0.0",
+  "description": "Enterprise legacy hybrid app architecture (PHP/AngularJS/jQuery) with integrated unit testing and security hardening mitigations.",
+  "main": "index.php",
+  "scripts": {
+    "test": "mocha test/unit/**/*.spec.js --reporter spec"
+  },
+  "dependencies": {
+    "angular": "1.8.3",
+    "jquery": "3.7.1"
+  },
+  "devDependencies": {
+    "jsdom": "22.1.0",
+    "mocha": "10.2.0",
+    "chai": "4.3.7"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "private": true
+}
