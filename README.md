@@ -24,4 +24,25 @@ This repository serves as a professional portfolio case study simulating a multi
 * **Test Suite:** Jasmin / Jest / Node Test Runner
 
 
+FOOT PRINT:
+ Tech360cmd-legacy-hybrid-modernization/
+│
+|___ README.md 
+├── .github/workflows/
+│   └── node-ci.yml        # Fires 'npm test' (Now executes BOTH Mocha & Jasmine cascadingly!)
+├── spec/
+│   ├── support/
+│   │   └── jasmine.json   # Jasmine system settings manifest
+│   └── catalog.spec.js    # New Jasmine unit spec file
+├── test/
+│   └── unit/
+│       └── catalog.spec.js # Pre-existing Mocha validation unit suite
+├── api.php
+├── app.js
+├── index.php
+└── package.json
+
+
+
+
 
